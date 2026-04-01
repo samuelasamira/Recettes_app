@@ -29,4 +29,35 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    /**
+     * Les recettes créées par cet utilisateur
+     */
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
+
+    /**
+     * Les commentaires de cet utilisateur
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Les recettes favorites de cet utilisateur
+     */
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    /**
+     * Les évaluations de cet utilisateur
+     */
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 }
