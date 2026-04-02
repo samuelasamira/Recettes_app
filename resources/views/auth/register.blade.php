@@ -88,35 +88,35 @@
         }
     </style>
 </head>
-<body class="bg-surface font-body text-on-surface min-h-screen flex items-center justify-center p-0 md:p-6">
-<main class="w-full max-w-6xl min-h-[921px] grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-none md:rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(44,47,48,0.06)]">
+<body class="bg-surface font-body text-on-surface min-h-screen flex items-center justify-center p-4">
+<main class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(44,47,48,0.06)]">
 <section class="relative hidden md:block overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img alt="Chef prepping" class="w-full h-full object-cover" src="https://i.pinimg.com/736x/b7/8d/5d/b78d5d6a62c38abae61c10afc9a2a572.jpg"/>
 </div>
 <div class="absolute inset-0 z-10 editorial-gradient opacity-85"></div>
-<div class="absolute inset-0 z-20 flex flex-col justify-between p-12 text-on-primary">
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-8 text-on-primary">
 <div>
-<h1 class="font-headline font-extrabold text-4xl tracking-tighter mb-4">Recettes App</h1>
-<p class="font-body text-lg max-w-sm opacity-90">Rejoignez la plus grande communauté dédiée à l'héritage culinaire camerounais.</p>
+<h1 class="font-headline font-extrabold text-3xl tracking-tighter mb-3">Recettes App</h1>
+<p class="font-body text-sm max-w-sm opacity-90">Rejoignez la plus grande communauté dédiée à l'héritage culinaire camerounais.</p>
 </div>
-<div class="glass-panel p-8 rounded-xl border border-white/20">
-<p class="font-headline font-semibold text-xl text-on-surface mb-2">"La cuisine est le cœur d'une maison."</p>
-<p class="font-label text-sm uppercase tracking-widest text-on-surface-variant">Tradition &amp; Innovation</p>
+<div class="glass-panel p-6 rounded-xl border border-white/20">
+<p class="font-headline font-semibold text-lg text-on-surface mb-1">"La cuisine est le cœur d'une maison."</p>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Tradition &amp; Innovation</p>
 </div>
 </div>
 </section>
-<section class="flex flex-col justify-center px-8 md:px-16 py-12 bg-surface-container-lowest">
-<div class="max-w-md w-full mx-auto">
-<header class="mb-10">
-<h2 class="font-headline font-bold text-3xl text-on-surface mb-2">Créer un compte</h2>
-<p class="text-on-surface-variant">Commencez votre voyage culinaire dès aujourd'hui.</p>
+<section class="flex flex-col justify-center px-6 md:px-10 py-8 bg-surface-container-lowest">
+<div class="max-w-sm w-full mx-auto">
+<header class="mb-6">
+<h2 class="font-headline font-bold text-2xl text-on-surface mb-1">Créer un compte</h2>
+<p class="text-on-surface-variant text-sm">Commencez votre voyage culinaire dès aujourd'hui.</p>
 </header>
 
 <!-- Affichage des erreurs -->
 @if ($errors->any())
-    <div class="mb-6 p-4 rounded-lg bg-error-container/20 border border-error/30">
-        <ul class="list-disc list-inside text-error text-sm">
+    <div class="mb-4 p-3 rounded-lg bg-error-container/20 border border-error/30">
+        <ul class="list-disc list-inside text-error text-xs">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
@@ -124,54 +124,54 @@
     </div>
 @endif
 
-<form method="POST" action="{{ route('register') }}" class="space-y-6">
+<form method="POST" action="{{ route('register') }}" class="space-y-4">
     @csrf
 
     <div>
-        <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="name">Nom complet</label>
-        <input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300" id="name" name="name" value="{{ old('name') }}" placeholder="Jean Dupont" type="text" required autofocus>
+        <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 ml-1" for="name">Nom complet</label>
+        <input class="w-full px-4 py-2.5 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300 text-sm" id="name" name="name" value="{{ old('name') }}" placeholder="Jean Dupont" type="text" required autofocus>
     </div>
 
     <div>
-        <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="email">Adresse Email</label>
-        <input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300" id="email" name="email" value="{{ old('email') }}" placeholder="chef@recettes.cm" type="email" required>
+        <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 ml-1" for="email">Adresse Email</label>
+        <input class="w-full px-4 py-2.5 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300 text-sm" id="email" name="email" value="{{ old('email') }}" placeholder="chef@recettes.cm" type="email" required>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
-            <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="password">Mot de passe</label>
-            <input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300" id="password" name="password" placeholder="••••••••" type="password" required>
+            <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 ml-1" for="password">Mot de passe</label>
+            <input class="w-full px-4 py-2.5 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300 text-sm" id="password" name="password" placeholder="••••••••" type="password" required>
         </div>
         <div>
-            <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="password_confirmation">Confirmer</label>
-            <input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300" id="password_confirmation" name="password_confirmation" placeholder="••••••••" type="password" required>
+            <label class="block font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1 ml-1" for="password_confirmation">Confirmer</label>
+            <input class="w-full px-4 py-2.5 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all duration-300 text-sm" id="password_confirmation" name="password_confirmation" placeholder="••••••••" type="password" required>
         </div>
     </div>
 
-    <div class="flex items-start gap-3 py-2">
-        <div class="flex items-center h-5">
-            <input class="h-5 w-5 rounded border-outline-variant text-primary focus:ring-primary/40 bg-surface-container-low" id="terms" name="terms" type="checkbox" required>
+    <div class="flex items-start gap-2 py-1">
+        <div class="flex items-center h-4">
+            <input class="h-3.5 w-3.5 rounded border-outline-variant text-primary focus:ring-primary/40 bg-surface-container-low" id="terms" name="terms" type="checkbox" required>
         </div>
-        <label class="text-sm text-on-surface-variant leading-tight" for="terms">
-            J'accepte les <a class="text-primary font-semibold hover:underline" href="#">Conditions d'utilisation</a> et la <a class="text-primary font-semibold hover:underline" href="#">Politique de confidentialité</a>.
+        <label class="text-xs text-on-surface-variant leading-tight" for="terms">
+            J'accepte les <a class="text-primary font-semibold hover:underline" href="#">Conditions</a> et la <a class="text-primary font-semibold hover:underline" href="#">Confidentialité</a>.
         </label>
     </div>
 
-    <button class="w-full py-4 editorial-gradient text-on-primary font-headline font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300" type="submit">
+    <button class="w-full py-2.5 editorial-gradient text-on-primary font-headline font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 text-sm" type="submit">
         S'inscrire
     </button>
 </form>
 
-<div class="mt-10 pt-8 border-t border-surface-container">
-    <p class="text-center text-on-surface-variant">
+<div class="mt-6 pt-6 border-t border-surface-container">
+    <p class="text-center text-on-surface-variant text-sm">
         Déjà un compte ? 
         <a class="text-primary font-bold hover:underline ml-1" href="{{ route('login') }}">Se connecter</a>
     </p>
 </div>
 </div>
-<footer class="mt-auto pt-12">
+<footer class="mt-auto pt-8">
     <p class="text-center font-label text-[10px] uppercase tracking-[0.2em] text-outline">
-        © 2024 Recettes App — Cameroonian Culinary Heritage
+        © 2026 Recettes App - Patrimoine Culinaire Camerounais
     </p>
 </footer>
 </section>

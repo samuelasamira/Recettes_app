@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Recipe;
 use App\Models\User;
+use App\Models\Ingredient;
 use Illuminate\Database\Seeder;
 
 class RecipeSeeder extends Seeder
@@ -26,7 +27,7 @@ class RecipeSeeder extends Seeder
         // ==================== MENU TRADITIONNEL ====================
 
         // 1. Eru
-        Recipe::create([
+        $recipe1 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Eru Traditionnel du Sud-Ouest',
             'description' => 'Une soupe de feuilles sauvages (Eru et Waterleaf) riche en saveurs, accompagnée de son Fufu Water de qualité. Plat emblématique du Cameroun.',
@@ -38,9 +39,18 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'moyen',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/493015083_1239081501552561_655803597310589877_n.jpg',
         ]);
+        $recipe1->ingredients()->attach([
+            Ingredient::where('name', 'Feuilles d\'eru')->first()->id => ['quantity' => '500g'],
+            Ingredient::where('name', 'Feuilles de waterleaf')->first()->id => ['quantity' => '300g'],
+            Ingredient::where('name', 'Crevettes séchées')->first()->id => ['quantity' => '100g'],
+            Ingredient::where('name', 'Poisson fumé')->first()->id => ['quantity' => '200g'],
+            Ingredient::where('name', 'Huile de palme rouge')->first()->id => ['quantity' => '100ml'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Ail')->first()->id => ['quantity' => '3 gousses'],
+        ]);
 
         // 2. Ndole
-        Recipe::create([
+        $recipe2 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Ndole Royal aux Crevettes',
             'description' => "L'incontournable plat national camerounais, composé de feuilles de ndolé, arachides fraîches et crevettes marinées. Un délice authentique !",
@@ -52,9 +62,17 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'difficile',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/441868620_835977465243897_3697812085574705273_n.jpg',
         ]);
+        $recipe2->ingredients()->attach([
+            Ingredient::where('name', 'Feuilles de ndolé')->first()->id => ['quantity' => '500g'],
+            Ingredient::where('name', 'Crevettes fraîches')->first()->id => ['quantity' => '250g'],
+            Ingredient::where('name', 'Arachides fraîches')->first()->id => ['quantity' => '300g'],
+            Ingredient::where('name', 'Huile de palme rouge')->first()->id => ['quantity' => '100ml'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Ail')->first()->id => ['quantity' => '3 gousses'],
+        ]);
 
         // 3. Koki
-        Recipe::create([
+        $recipe3 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Koki aux Haricots et Épinards',
             'description' => 'Un pudding de haricots noir enveloppé dans des feuilles de plantain, parfumé aux épices. Un classique des repas de fête.',
@@ -66,9 +84,16 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'difficile',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/456951281_468398279502782_3034635848687688340_n.jpg',
         ]);
+        $recipe3->ingredients()->attach([
+            Ingredient::where('name', 'Haricots rouges secs')->first()->id => ['quantity' => '500g'],
+            Ingredient::where('name', 'Épinards frais')->first()->id => ['quantity' => '200g'],
+            Ingredient::where('name', 'Feuilles de plantain')->first()->id => ['quantity' => '4 feuilles'],
+            Ingredient::where('name', 'Huile de palme rouge')->first()->id => ['quantity' => '100ml'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '1'],
+        ]);
 
         // 4. Okok
-        Recipe::create([
+        $recipe4 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Okok Sauce Arachide',
             'description' => 'Une sauce onctueuse à base de feuilles d\'okok et d\'arachides, typique de la région du Centre-Cameroun.',
@@ -80,11 +105,17 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'moyen',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/493015083_1239081501552561_655803597310589877_n.jpg',
         ]);
+        $recipe4->ingredients()->attach([
+            Ingredient::where('name', 'Feuilles d\'okok')->first()->id => ['quantity' => '500g'],
+            Ingredient::where('name', 'Purée d\'arachides')->first()->id => ['quantity' => '300g'],
+            Ingredient::where('name', 'Huile de palme rouge')->first()->id => ['quantity' => '100ml'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '2'],
+        ]);
 
         // ==================== MENU STREET FOOD ====================
 
         // 5. Poulet DG
-        Recipe::create([
+        $recipe5 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Poulet DG Authentique',
             'description' => 'Le plat des "Directeurs Généraux" : poulet frit, bananes plantains mûres et une farandole de légumes croquants. Un festin royal !',
@@ -96,9 +127,18 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'moyen',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/518254713_1061325956123205_4012436858608735082_n.jpg',
         ]);
+        $recipe5->ingredients()->attach([
+            Ingredient::where('name', 'Poulet fermier')->first()->id => ['quantity' => '1.5 kg'],
+            Ingredient::where('name', 'Bananes plantains mûres')->first()->id => ['quantity' => '4'],
+            Ingredient::where('name', 'Poivrons verts')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Carottes')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Sauce tomate')->first()->id => ['quantity' => '500ml'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Ail')->first()->id => ['quantity' => '3 gousses'],
+        ]);
 
         // 6. Mbongo Tchobi
-        Recipe::create([
+        $recipe6 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Mbongo Tchobi - Poisson Sauce Noire',
             'description' => "Un poisson mijoté dans une sauce noire parfumée aux épices locales. Le secret des mamans camerounaises !",
@@ -110,9 +150,15 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'moyen',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/441545292_835976855243958_6155980324635135609_n.jpg',
         ]);
+        $recipe6->ingredients()->attach([
+            Ingredient::where('name', 'Poisson frais (capitaine ou tilapia)')->first()->id => ['quantity' => '1 kg'],
+            Ingredient::where('name', 'Pâte mbongo')->first()->id => ['quantity' => '200g'],
+            Ingredient::where('name', 'Tomates fraîches')->first()->id => ['quantity' => '4'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '2'],
+        ]);
 
         // 7. Kondre
-        Recipe::create([
+        $recipe7 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Kondre - Escargots à la Camerounaise',
             'description' => 'Des escargots mijotés dans une sauce tomate épicée, un délice de la cuisine de rue camerounaise.',
@@ -124,11 +170,18 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'facile',
             'image_path' => 'https://taketako.com/wp-content/uploads/2025/09/491570949_1440390446940530_5352418268934549116_n-1.jpg',
         ]);
+        $recipe7->ingredients()->attach([
+            Ingredient::where('name', 'Escargots de terre')->first()->id => ['quantity' => '2 douzaines'],
+            Ingredient::where('name', 'Sauce tomate')->first()->id => ['quantity' => '500ml'],
+            Ingredient::where('name', 'Piment rouge')->first()->id => ['quantity' => '3'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Ail')->first()->id => ['quantity' => '4 gousses'],
+        ]);
 
         // ==================== MENU MODERNE ====================
 
         // 8. Poisson Braisé
-        Recipe::create([
+        $recipe8 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Bar Braisé à la Kribienne',
             'description' => 'Un bar entier mariné aux épices du littoral, grillé au feu de bois et servi avec ses bâtons de manioc. Pure merveille !',
@@ -140,9 +193,16 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'moyen',
             'image_path' => 'https://apparts-meubles.com/wp-content/uploads/2025/06/491399429_982861227393586_1143994795777114894_n.jpg',
         ]);
+        $recipe8->ingredients()->attach([
+            Ingredient::where('name', 'Bar entier')->first()->id => ['quantity' => '1'],
+            Ingredient::where('name', 'Citron jaune')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Piment habanero')->first()->id => ['quantity' => '2'],
+            Ingredient::where('name', 'Ail')->first()->id => ['quantity' => '4 gousses'],
+            Ingredient::where('name', 'Gingembre frais')->first()->id => ['quantity' => '1 morceau'],
+        ]);
 
         // 9. Soya
-        Recipe::create([
+        $recipe9 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Soya du Nord Epicé',
             'description' => 'Brochettes de bœuf tendres grillées au charbon, enrobées de poudre de kankan (arachide et épices secrètes).',
@@ -154,9 +214,15 @@ class RecipeSeeder extends Seeder
             'difficulty' => 'facile',
             'image_path' => 'https://apparts-meubles.com/wp-content/uploads/2025/06/494781040_1302180165023693_8305440958335834490_n-1011x1536.jpeg',
         ]);
+        $recipe9->ingredients()->attach([
+            Ingredient::where('name', 'Bœuf tendre')->first()->id => ['quantity' => '1 kg'],
+            Ingredient::where('name', 'Poudre de kankan (arachide grillée)')->first()->id => ['quantity' => '100g'],
+            Ingredient::where('name', 'Oignons')->first()->id => ['quantity' => '3'],
+            Ingredient::where('name', 'Piment frais')->first()->id => ['quantity' => '4'],
+        ]);
 
         // 10. Beignets Haricots
-        Recipe::create([
+        $recipe10 = Recipe::create([
             'user_id' => $user->id,
             'title' => 'Beignets-Haricots (BH) Signature',
             'description' => 'Le petit-déjeuner iconique : beignets croustillants, haricots rouges savoureux et bouillie de maïs onctueuse.',
@@ -167,6 +233,13 @@ class RecipeSeeder extends Seeder
             'cuisine_type' => 'Moderne',
             'difficulty' => 'facile',
             'image_path' => 'https://apparts-meubles.com/wp-content/uploads/2025/06/501790818_1022705050009263_4981438295992879654_n.jpg',
+        ]);
+        $recipe10->ingredients()->attach([
+            Ingredient::where('name', 'Farine de blé')->first()->id => ['quantity' => '500g'],
+            Ingredient::where('name', 'Levure boulangère')->first()->id => ['quantity' => '10g'],
+            Ingredient::where('name', 'Haricots rouges')->first()->id => ['quantity' => '400g'],
+            Ingredient::where('name', 'Sucre')->first()->id => ['quantity' => '100g'],
+            Ingredient::where('name', 'Bouillie de maïs')->first()->id => ['quantity' => '500ml'],
         ]);
     }
 }

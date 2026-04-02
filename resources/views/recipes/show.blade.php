@@ -94,7 +94,7 @@
 <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
 <div class="text-2xl font-bold tracking-tighter text-indigo-600 dark:text-indigo-400 font-headline">Recettes App</div>
 <div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] font-medium">
-<a class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition-colors duration-300" href="{{ route('recipes.index') }}">Accueil</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition-colors duration-300" href="{{ route('recipes.index') }}">Recettes</a>
 <a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1" href="{{ route('recipes.index') }}">Recettes</a>
 <a class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition-colors duration-300" href="{{ route('dashboard') }}">Tableau de bord</a>
 </div>
@@ -306,33 +306,11 @@
 </div>
 </main>
 
-<!-- Footer -->
-<footer class="w-full py-12 mt-auto bg-gray-100 dark:bg-gray-950">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 max-w-7xl mx-auto">
-<div class="col-span-1 md:col-span-1">
-<div class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 font-headline">Recettes App</div>
-<p class="font-['Manrope'] text-sm text-gray-500 dark:text-gray-400">© 2024 Recettes App - Patrimoine Culinaire Camerounais</p>
-</div>
-<div class="flex flex-col space-y-3 font-['Manrope'] text-sm">
-<p class="font-bold text-gray-900 dark:text-gray-100 mb-2 uppercase text-xs tracking-widest">Compagnie</p>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">À propos</a>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Contact</a>
-</div>
-<div class="flex flex-col space-y-3 font-['Manrope'] text-sm">
-<p class="font-bold text-gray-900 dark:text-gray-100 mb-2 uppercase text-xs tracking-widest">Légal</p>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Confidentialité</a>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Conditions</a>
-</div>
-<div class="flex flex-col space-y-4">
-<p class="font-['Manrope'] text-sm font-bold text-gray-900 dark:text-gray-100 mb-2 uppercase text-xs tracking-widest">Newsletter</p>
-<div class="flex">
-<input class="bg-white dark:bg-gray-900 border-none rounded-l-lg p-2 w-full text-sm focus:ring-1 focus:ring-indigo-500" placeholder="Email" type="email"/>
-<button class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg hover:bg-indigo-700 transition-colors">
-<span class="material-symbols-outlined text-sm">send</span>
-</button>
-</div>
-</div>
-</div>
+<!-- Footer simplifié -->
+<footer class="bg-gray-100 py-8 mt-auto">
+    <div class="max-w-7xl mx-auto px-8">
+        <p class="text-center text-gray-500 text-sm">© 2024 Recettes App - Patrimoine Culinaire Camerounais</p>
+    </div>
 </footer>
 
 <script>

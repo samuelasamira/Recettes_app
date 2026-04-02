@@ -233,34 +233,33 @@
 </div>
 </section>
 </main>
-<!-- Footer -->
+
+<!-- Footer avec liens fonctionnels -->
 <footer class="w-full py-12 mt-auto bg-gray-100 dark:bg-gray-950 font-['Manrope'] text-sm">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 max-w-7xl mx-auto">
-<div class="flex flex-col gap-4">
-<div class="text-lg font-bold text-gray-900 dark:text-gray-100">Recettes App</div>
-<p class="text-gray-500 dark:text-gray-400">Célébrer le patrimoine culinaire du Cameroun, une recette à la fois.</p>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-gray-900 dark:text-gray-100 uppercase text-xs tracking-widest mb-2">Explorer</h4>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">À propos</a>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Index des recettes</a>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-gray-900 dark:text-gray-100 uppercase text-xs tracking-widest mb-2">Légal</h4>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Confidentialité</a>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Conditions d'utilisation</a>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-gray-900 dark:text-gray-100 uppercase text-xs tracking-widest mb-2">Contact</h4>
-<a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="#">Nous contacter</a>
-<div class="flex gap-4 mt-2">
-<span class="material-symbols-outlined text-gray-400 cursor-pointer">share</span>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-center md:text-left">
-<p class="text-gray-500 dark:text-gray-400 opacity-80 hover:opacity-100 transition-opacity">© 2024 Recettes App - Patrimoine Culinaire Camerounais</p>
-</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col gap-4">
+            <div class="text-lg font-bold text-gray-900 dark:text-gray-100">Recettes App</div>
+            <p class="text-gray-500 dark:text-gray-400">Célébrer le patrimoine culinaire du Cameroun, une recette à la fois.</p>
+        </div>
+        <div>
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 uppercase text-xs tracking-widest mb-4">Explorer</h4>
+            <ul class="flex flex-col gap-2">
+                <li><a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="{{ route('pages.about') }}">À propos</a></li>
+                <li><a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="{{ route('recipes.index') }}">Index des recettes</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 uppercase text-xs tracking-widest mb-4">Légal</h4>
+            <ul class="flex flex-col gap-2">
+                <li><a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="{{ route('pages.privacy') }}">Confidentialité</a></li>
+                <li><a class="text-gray-500 dark:text-gray-400 hover:underline transition-all" href="{{ route('pages.terms') }}">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
+        <p class="text-gray-500 dark:text-gray-400">© 2024 Recettes App - Patrimoine Culinaire Camerounais</p>
+    </div>
 </footer>
+
 </body>
 </html>

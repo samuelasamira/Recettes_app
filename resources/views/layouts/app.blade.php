@@ -51,7 +51,7 @@
                         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
                         + Nouvelle recette
                     </a>
-                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                    <form method="POST" action="{{ route('logout') }}" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?')">
                         @csrf
                         <button type="submit" class="text-red-600 hover:text-red-700 font-medium text-sm flex items-center gap-1">
                             <span class="material-symbols-outlined text-sm">logout</span>
@@ -89,30 +89,10 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 py-12 mt-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 max-w-7xl mx-auto">
-            <div class="flex flex-col gap-4">
-                <span class="text-lg font-bold text-gray-900">Recettes App</span>
-                <p class="text-gray-500 text-sm leading-relaxed">Célébrer et préserver l'héritage culinaire camerounais à travers une plateforme digitale moderne et gourmande.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm mb-4 uppercase tracking-widest text-on-surface-variant">Liens utiles</h4>
-                <ul class="flex flex-col gap-2">
-                    <li><a class="text-gray-500 text-sm hover:underline hover:text-indigo-600 transition-all" href="{{ route('pages.about') }}">À propos</a></li>
-                    <li><a class="text-gray-500 text-sm hover:underline hover:text-indigo-600 transition-all" href="{{ route('pages.contact') }}">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm mb-4 uppercase tracking-widest text-on-surface-variant">Légal</h4>
-                <ul class="flex flex-col gap-2">
-                    <li><a class="text-gray-500 text-sm hover:underline hover:text-indigo-600 transition-all" href="{{ route('pages.privacy') }}">Confidentialité</a></li>
-                    <li><a class="text-gray-500 text-sm hover:underline hover:text-indigo-600 transition-all" href="{{ route('pages.terms') }}">Conditions</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-gray-200">
-            <p class="text-center text-gray-500 text-xs">© 2024 Recettes App - Patrimoine Culinaire Camerounais</p>
+    <!-- Footer simplifié -->
+    <footer class="bg-gray-100 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-8">
+            <p class="text-center text-gray-500 text-sm">© 2024 Recettes App - Patrimoine Culinaire Camerounais</p>
         </div>
     </footer>
 

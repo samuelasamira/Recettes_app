@@ -5,7 +5,7 @@
 @section('content')
 <main class="pt-32 pb-20 px-8 max-w-4xl mx-auto">
     <h1 class="font-headline font-extrabold text-4xl tracking-tight text-on-surface mb-6">Politique de confidentialité</h1>
-    <div class="prose prose-lg text-on-surface-variant space-y-4">
+    <div class="space-y-4 text-on-surface-variant">
         <p>Votre vie privée est importante pour nous. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
         <h2 class="text-xl font-bold mt-6 mb-3">Collecte des informations</h2>
         <p>Nous collectons les informations que vous nous fournissez directement, comme votre nom, votre adresse email et les recettes que vous publiez.</p>
