@@ -13,95 +13,137 @@ class IngredientSeeder extends Seeder
     public function run(): void
     {
         $ingredients = [
-            // Ingrédients de base
-            'Farine',
-            'Sucre',
-            'Sel',
-            'Beurre',
-            'Œufs',
-            'Lait',
-            'Levure chimique',
-            'Huile de palme',
-            'Huile d\'arachide',
-            'Poivre',
-            
-            // Ingrédients camerounais populaires
-            'Piment frais',
-            'Piment sec',
-            'Arachides',
-            'Feuilles de manioc',
-            'Graine de courge (pépins)',
-            'Noix de coco',
-            'Lait de coco',
-            'Épinards',
-            'Poisson séché',
+            // ===== INGRÉDIENTS POUR ERU =====
+            'Feuilles d\'eru',
+            'Feuilles de waterleaf',
             'Crevettes séchées',
+            'Poisson fumé',
+            'Huile de palme rouge',
             
-            // Légumes camerounais
-            'Tomates',
+            // ===== INGRÉDIENTS POUR NDOLE =====
+            'Feuilles de ndolé',
+            'Arachides fraîches',
+            'Crevettes fraîches',
+            'Bœuf fumé',
+            
+            // ===== INGRÉDIENTS POUR KOKI =====
+            'Haricots rouges secs',
+            'Épinards frais',
+            'Feuilles de plantain',
+            
+            // ===== INGRÉDIENTS POUR OKOK =====
+            'Feuilles d\'okok',
+            'Purée d\'arachides',
+            
+            // ===== INGRÉDIENTS POUR POULET DG =====
+            'Poulet fermier',
+            'Bananes plantains mûres',
+            'Poivrons verts',
+            'Poivrons rouges',
+            'Carottes',
+            'Sauce tomate',
+            
+            // ===== INGRÉDIENTS POUR MBONGO TCHOBI =====
+            'Poisson frais (capitaine ou tilapia)',
+            'Pâte mbongo',
+            'Tomates fraîches',
+            
+            // ===== INGRÉDIENTS POUR KONDRE =====
+            'Escargots de terre',
+            'Piment rouge',
+            
+            // ===== INGRÉDIENTS POUR POISSON BRAISÉ =====
+            'Bar entier',
+            'Citron jaune',
+            'Piment habanero',
+            
+            // ===== INGRÉDIENTS POUR SOYA =====
+            'Bœuf tendre',
+            'Poudre de kankan (arachide grillée)',
+            'Charbon de bois',
+            
+            // ===== INGRÉDIENTS POUR BEIGNETS HARICOTS =====
+            'Farine de blé',
+            'Levure boulangère',
+            'Haricots rouges',
+            'Bouillie de maïs',
+            
+            // ===== INGRÉDIENTS DE BASE GÉNÉRAUX =====
+            'Sel',
+            'Poivre noir',
             'Oignons',
             'Ail',
+            'Gingembre frais',
+            'Gingembre en poudre',
+            'Piment frais',
+            'Piment sec',
+            'Thym',
+            'Laurier',
+            'Curcuma',
+            'Coriandre fraîche',
+            'Persil',
+            
+            // ===== HUILES ET MATIÈRES GRASSES =====
+            'Huile d\'arachide',
+            'Huile d\'olive',
+            'Beurre',
+            'Margarine',
+            
+            // ===== LÉGUMES DE BASE =====
+            'Tomates',
+            'Oignons verts',
             'Poivrons',
             'Aubergines',
-            'Carottes',
-            'Pommes de terre',
-            'Patates douces',
-            'Igname',
-            'Taro',
-            'Plantain',
-            'Maïs',
-            'Haricots',
-            'Pois de terre',
-            'Concombre',
             'Courgettes',
             'Chou',
-            'Oignons verts',
-            'Persil',
-            'Menthe',
+            'Concombre',
             
-            // Viandes et protéines
-            'Poulet',
-            'Boeuf',
-            'Poisson frais',
-            'Escargots',
-            'Crevettes',
-            
-            // Féculents
-            'Riz',
-            'Pâtes',
-            'Semoule',
+            // ===== FÉCULENTS =====
+            'Riz blanc',
+            'Riz étuvé',
+            'Pâtes alimentaires',
+            'Semoule de blé',
             'Farine de maïs',
             'Farine de manioc',
-            'Grains de maïs',
+            'Maïs frais',
             'Mil',
-            'Sorgho',
             
-            // Produits laitiers et condiments
-            'Fromage',
-            'Crème fraîche',
-            'Yaourt',
-            'Miel',
-            'Sauce soja',
-            'Vinaigre blanc',
+            // ===== VIANDES ET PROTÉINES =====
+            'Poulet',
+            'Bœuf',
+            'Agneau',
+            'Poisson frais',
+            'Poisson séché',
+            'Crevettes',
+            'Escargots',
+            'Œufs',
+            
+            // ===== FRUITS =====
             'Citron',
             'Citron vert',
-            'Orange',
-            'Papaye',
             'Mangue',
-            'Banane plantain',
+            'Papaye',
             'Banane douce',
+            'Banane plantain',
+            'Noix de coco fraîche',
+            'Lait de coco',
             
-            // Épices camerounaises
-            'Gingembre',
+            // ===== ÉPICES CAMEROUNAISES SPÉCIALES =====
             'Clou de girofle',
             'Cannelle',
             'Noix de muscade',
-            'Curcuma',
-            'Coriandre',
-            'Thym',
-            'Laurier',
             'Maggi cube',
-            'Bouillon de poisson',
+            'Bouillon de poisson en cube',
+            'Piment de Cayenne',
+            
+            // ===== AUTRES =====
+            'Miel',
+            'Sauce soja',
+            'Vinaigre blanc',
+            'Vinaigre de cidre',
+            'Crème fraîche',
+            'Yaourt nature',
+            'Fromage râpé',
         ];
 
         foreach ($ingredients as $name) {

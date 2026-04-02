@@ -11,13 +11,43 @@ use Illuminate\Support\Facades\Storage;
 class RecipeController extends Controller
 {
     /**
-     * Display a listing of recipes
+     * Display a listing of recipes with filtering and search
      */
-    public function index()
+    public function index(Request $request)
     {
-        $recipes = Recipe::with('user', 'ingredients', 'ratings')
-                        ->latest()
-                        ->paginate(12);
+        $query = Recipe::with('user', 'ingredients', 'ratings');
+        
+        // Recherche par mot-clé (titre, description ou type de cuisine)
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhere('cuisine_type', 'like', "%{$search}%");
+            });
+        }
+        
+        // Filtrage par type de cuisine
+        if ($request->filled('type')) {
+            $type = $request->type;
+            if ($type === 'Traditionnel') {
+                $query->where('cuisine_type', 'Traditionnel');
+            } elseif ($type === 'Moderne') {
+                $query->where('cuisine_type', 'Moderne');
+            } elseif ($type === 'Street Food') {
+                $query->where('cuisine_type', 'Street Food');
+            }
+        }
+        
+        $recipes = $query->latest()->paginate(12);
+        
+        // Préserver les paramètres dans la pagination
+        if ($request->filled('type')) {
+            $recipes->appends(['type' => $request->type]);
+        }
+        if ($request->filled('search')) {
+            $recipes->appends(['search' => $request->search]);
+        }
         
         return view('recipes.index', compact('recipes'));
     }
@@ -76,6 +106,9 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
+        // Incrémenter le compteur de vues
+        $recipe->increment('views');
+        
         $recipe->load('user', 'ingredients', 'comments.user', 'ratings.user', 'favorites');
         
         $averageRating = $recipe->averageRating();
@@ -94,9 +127,9 @@ class RecipeController extends Controller
     {
         $this->authorize('update', $recipe);
         
-        $ingredients = Ingredient::all();
-        $recipe->load('ingredients');
-
+        $ingredients = Ingredient::all();      // Tous les ingrédients disponibles
+        $recipe->load('ingredients');          // Ingrédients de la recette
+        
         return view('recipes.edit', compact('recipe', 'ingredients'));
     }
 
